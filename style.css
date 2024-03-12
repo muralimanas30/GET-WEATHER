@@ -1,0 +1,202 @@
+*,body,html{
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    margin: 0px;
+    outline: none;
+    padding: 0px;
+}
+body{
+    height: 100vh;
+    width: 100%;
+}
+#window5{
+
+    transition: all 0.6s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url("tjbg.webp");
+    background-position: 30% 30%;
+    background-size: cover;
+    overflow: auto;
+    background-repeat: no-repeat;
+
+}
+.weather-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    gap: 1rem;
+    
+    height: fit-content;
+    width: clamp(250px, 80vw, 540px);
+    border-radius: 15px;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 15px;
+
+    background-color: transparent;
+    backdrop-filter: blur(20px) brightness(0.8);
+    box-shadow: 0px 3px 10px 1px black inset;  
+
+}
+#weather-form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column nowrap;
+
+        gap: 0.8rem;
+        padding: 15px 10px;
+        border-radius: 10px;
+        max-height: 180px;
+        max-width: 400px;
+        /* width: 90%; */
+        
+        text-align: center;
+        background-image: url("clouds.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        
+        & *:not(label){
+            flex: 0.75 0 2rem;
+        }
+        & button{
+            max-width: 150px;
+            height: 40px;
+            border: 1px solid white;
+            font-size: 0.8rem;
+            border-radius: 5px;
+            background:linear-gradient(to right, rgb(22, 78, 233),rgb(139, 5, 192));
+            color: white;
+            padding: 0px 1ch;
+            transition: all 0.2s ease;
+        }
+        & button:active{
+            transform: scale(0.9);
+        }
+    
+        &   .header{
+            display: block;
+            color: white;
+            text-align: center;
+            font-size: clamp(16px, 4vw , 19px);
+            
+            
+            /* background-color: transparent; */
+            backdrop-filter: blur(20px) brightness(0.5);
+            
+            /* border-radius: 5px; */
+            border: 2px solid white;
+            border-left: 0px; border-right: 0px;
+            transition: all 0.2s ease-in-out;
+        }
+        & .header::before , .header::after{
+            content: "  ";
+        }
+
+        & input{
+
+            height: 3ch;
+            width: clamp(150px, 85%, 220px);
+            font-size: 1.0rem;
+            border-radius: 5px;
+            color: white;
+            background-color: transparent;
+            backdrop-filter: blur(20px) brightness(0.5);
+            padding: 1.8ch 2ch;
+            box-shadow: 0px 2px 1px 1px transparent;
+            border: 1px solid rgb(61, 17, 163);            
+            transition: all 0.2s ease-in-out;
+        }
+        & input::placeholder{
+            color: white;
+        }
+        & input:focus{
+            border-left: 0px; border-right: 0px;
+            border-radius: 0px;
+        }
+        & label{
+            font-size: clamp(20px, 4vw , 24px);
+            text-align: left;
+
+        }
+
+}
+
+.weather-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    gap: 10px;
+    
+    
+    background-image: url("garden.avif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    border-radius:10px;
+    padding: 15px 10px;
+    font-size: 15px;
+
+    & *{
+        flex:1 0 3rem;
+    }
+    & .city-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        /* gap: 0.2rem; */
+    }
+
+    & #weather-city-name{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 1.4rem;
+        
+        margin:3px;
+        margin-bottom: 0px;
+        padding: 0px 10px;
+
+        border-radius: 15px;
+        border-bottom-left-radius:0px;
+        border-bottom-right-radius:0px;
+        
+        background-color: #175fbd;
+        box-shadow: 0px 3px 10px 1px black;
+        color: white;
+    }
+
+    & .city-image img{
+        height: 140px;
+        max-width: 200px;
+        
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+        border: 2px solid white;
+        box-shadow: 0px 1px 10px 1px black;
+    }
+    & .all-weather-data , .trying-for-data{
+        
+        text-align: center;
+        backdrop-filter: blur(10px) brightness(0.8);
+        border-radius: 15px;
+        padding: 10px;
+        box-shadow: 0px 1px 10px 1px black;
+    }
+
+}
+
+
+@media only screen and (min-width:430px) {
+    .weather-card , #weather-form{
+        flex-flow: row wrap;
+    }
+}
